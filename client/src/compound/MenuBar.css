@@ -1,0 +1,42 @@
+.MuiPopover-paper{
+  min-width: 96px !important;
+  top: 27px !important;
+  left: 282px !important;
+}
+  .MuiPaper-root {
+    background-color: #1e1e1e !important;
+    color: wheat !important;
+  }
+
+  .MuiListItem-gutters {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+  .tabs{
+    margin-top: -1px;
+    margin-right: 5px;
+    width: 87px;
+    padding: -1px;
+    position: relative;
+    left: 39%;
+    display: list-item;
+    font-size: 18px !important;
+  }
+
+  .download{
+      margin-top: -1px;
+      margin-right: 5px;
+      width: 87px;
+      padding: -1px;
+      position: relative;
+      left: 39%;
+      display: list-item;
+      padding: 2px;
+  }
+
+
+  .icon{
+    /* padding-top: 2px;
+    padding-left: 51px; */
+  }
+ 
