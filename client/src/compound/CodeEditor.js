@@ -1,39 +1,23 @@
-
-import React, { useState } from "react";
-import { ControlledEditor as MonacoEditor } from "@monaco-editor/react";
-export const CodeEditor = () => {
-  const [code, setCode] = useState(
- `#include <iostream>
-  using namespace std;
-  
-  int main() {
-    // your code goes here
-    return 0;
-  }
-  `);
-
+import React from 'react';
+import { ControlledEditor as MonacoEditor } from '@monaco-editor/react';
+export const CodeEditor = (props) => {
   const options = {
     minimap: {
-      enabled: false
-    }
-  };
-
-  const changeHandler = (evt, newText) => {
-    console.log(newText);
-    setCode(newText);
+      enabled: false,
+    },
   };
 
   const editorDidMount = (editor, monaco) => {
-    console.log("editorDidMount", editor);
+    console.log('editorDidMount', editor);
   };
 
   return (
     <MonacoEditor
-      language="cpp"
+      language={props.lang}
       theme="vs-dark"
-      value={code}
+      value={props.code}
       options={options}
-      onChange={changeHandler}
+      onChange={props.changeHandler}
       editorDidMount={editorDidMount}
     />
   );

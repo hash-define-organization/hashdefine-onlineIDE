@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Input() {
+export default function Input(props) {
   return (
   	<div class="window">
            <div className="controls-container">
@@ -8,7 +8,7 @@ export default function Input() {
 					</div>
 					<div className="pages">
 						<div className="selected">
-						<textarea id="output" rows="1"></textarea>
+						<textarea id="output" onChange={(e)=>{props.getInput(e.target.value)}} rows="1"/>
 						</div>
 					</div>
     </div>

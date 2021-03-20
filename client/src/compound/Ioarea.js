@@ -1,12 +1,17 @@
 import React from 'react'
 import Input from './Input'
 import Output from './Output'
-export default function Ioarea() {
+export default function Ioarea(props) {
+  
+
+  const getInput=(data)=>{
+   props.input(data);
+  }
   return (
     <div className="right">
-      <Input/>
+      <Input getInput={getInput}/>
       <div className="seperator" id="horizontal-seperator"></div>
-      <Output/>
+      <Output output={props.output}/>
     </div>
   )
 }
