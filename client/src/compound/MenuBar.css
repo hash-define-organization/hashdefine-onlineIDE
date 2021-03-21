@@ -34,5 +34,12 @@
       padding: 2px;
   }
 
+  .loading{
+    position: relative !important;
+  }
+  .listo{
+    list-style-type: none;
+  }
+
 
   

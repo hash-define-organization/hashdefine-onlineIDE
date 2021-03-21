@@ -61,6 +61,7 @@ textarea {
 .selected{
   height: 100%;
 }
+
 .window {
   display: grid;
   height: auto;
@@ -99,6 +100,7 @@ textarea {
 .pages > div.selected {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .challenge-info {
