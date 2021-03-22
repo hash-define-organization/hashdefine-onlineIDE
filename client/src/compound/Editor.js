@@ -149,15 +149,14 @@ int main() {
                   onClick={() => {
                     setAnchorEl(null);
                     setlang('java');
-                    setcode(`/*package whatever //do not write package name here */
+                    setcode(`/*package whatever
+  //do not write package name here and  do not import library */
 
-import java.io.*;
 
-class GFG {
 	public static void main (String[] args) {
 		System.out.println("Welcome To Hashdefine IDE !");
 	}
-}`);
+  `);
                   }}
                 >
                   Java

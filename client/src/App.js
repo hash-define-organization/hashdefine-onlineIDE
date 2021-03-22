@@ -18,7 +18,18 @@ function App() {
     if (langs === 'cpp') langs = 'Cpp';
     else if (langs === 'python') langs = 'Python';
     else if (langs === 'python3') langs = 'Python3';
-    else if (langs === 'java') langs = 'Java';
+    else if (langs === 'java'){
+      langs = 'Java'
+
+      code=`
+      import java.io.*;
+      import java.util.*;
+      import java.lang.*;
+      class GFG {
+	      ${code}
+      }
+      `
+    }
     else if (langs === 'c') langs = 'c';
     else if (langs === 'cpp14') langs = 'Cpp14';
 
