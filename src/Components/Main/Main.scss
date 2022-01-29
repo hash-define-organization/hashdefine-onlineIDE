@@ -1,0 +1,51 @@
+.main {
+    width: 100%;
+    display: flex;
+    
+    .showCode {
+        border-radius: 50px;
+        border: 2px solid rgba(white, 0.8);
+        color: rgba(white, 0.8);
+        padding: 5px;
+        position: absolute;
+        right: 0;
+        margin: 10px 20px;
+        cursor: pointer;
+
+        transition: color, border-color 100ms ease-in-out;
+        transition: transform 0.25s ease-in-out;;
+
+        &:hover {
+            color: rgba(white,1);
+            border-color: rgba(white,1);
+        }
+    }
+
+    .showCode--collapsed {
+        transform: rotate(180deg);
+    }
+
+    .submitCode {
+        border-radius: 50px;
+        color: rgba(white, 0.8);
+        border: none;
+        padding: 5px;
+        font-size: 3em;
+        position: absolute;
+        right: 1%;
+        bottom: 4%;
+        margin: 10px 20px;
+        cursor: pointer;
+        background-color: #00ab66;
+
+        transition: color 100ms ease-in-out;
+
+        &:hover {
+            color: rgba(white,1);
+        }
+    }
+
+    .submitCode--progress {
+        padding: 9px;
+    }
+}
