@@ -12,13 +12,14 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
-    "node-sass": "^4.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-monaco-editor": "^0.46.0",
     "react-redux": "^7.2.6",
     "react-scripts": "^3.4.4",
     "redux": "^4.1.2",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
