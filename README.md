@@ -35,17 +35,17 @@ I am writing down the Dependencies for beginners, so that they can look into it 
 
 2. Clone the Forked Repository to your local machine.
 	```
-	git clone https://github.com/<your GitHub user name>/Hash-Whiteboard.git.
+	git clone https://github.com/<your GitHub user name>/hashdefine-onlineIDE.git.
 	```
 
-3. Change the directory to Hash-Whiteboard.
+3. Change the directory to HashIDE.
 	```bash
 	cd Hash-Whiteboard
 	```
 
 4. Add remote to the Original Repository.
 	```
-	git add remote https://github.com/hash-define-organization/Hash-Whiteboard.git
+	git add remote https://github.com/hash-define-organization/hashdefine-onlineIDE.git
 	```
 
 5. Install the dependecies.
