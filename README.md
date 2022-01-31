@@ -40,7 +40,7 @@ I am writing down the Dependencies for beginners, so that they can look into it 
 
 3. Change the directory to HashIDE.
 	```bash
-	cd Hash-Whiteboard
+	cd HashIDE
 	```
 
 4. Add remote to the Original Repository.
