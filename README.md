@@ -1,4 +1,4 @@
-# Hash Whiteboard
+# Hash IDE
 
 ![image](https://user-images.githubusercontent.com/78612380/151775878-17907171-53cd-44b4-80f8-58426da8f8cd.png)
 
