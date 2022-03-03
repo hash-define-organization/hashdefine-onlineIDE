@@ -19,6 +19,9 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
+    collegeName:{
+        type:String
+    },
     LanguagesKnown:[{
         language:{
                 type:String
