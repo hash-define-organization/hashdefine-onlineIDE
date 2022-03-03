@@ -27,9 +27,9 @@ series
 
 	<img width="72" alt="image" src="https://user-images.githubusercontent.com/71627983/151713658-7e9576d0-f373-4e6a-a60a-e3d58b3b38c8.png">
 
-2. Clone the Forked Repository to your local machine.
+2. Pull the Forked Repository to your local machine.
 	```
-	git clone https://github.com/<your GitHub user name>/hashdefine-onlineIDE.git.
+	git pull https://github.com/<your GitHub user name>/hashdefine-onlineIDE.git.
 	```
 
 3. Change the directory to HashIDE.
@@ -54,6 +54,33 @@ series
 
 7. The app starts on `localhost:3000`. If not, [Click here](http://localhost:3000) to open the app in browser.
 
+8. Make your changes
+
 ## Submitting a Pull Request
 
-Simply upload your code to your fork and make a pull request. Our netlify bot will automatically show you the final preview of your pre-release and if the result is satisfactory, we will surely accept your request 😊
+1. Check the status of the repository.
+```sh
+git status
+```
+
+2. If you can see some changes, you can add all the items to git.
+ ```sh
+git add .
+```
+
+3. Commit to github with proper name of changes made
+```sh
+git commit -m "CONTRIBUTING PR steps added"
+```
+
+4. Check the git status if the directory is clean now.
+```sh
+git status
+```
+
+5. Push the changes!
+```sh
+git push -u origin master
+```
+
+Our netlify bot will automatically show you the final preview of your pre-release and if the result is satisfactory, we will surely accept your request 😊
