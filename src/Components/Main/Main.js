@@ -2,7 +2,7 @@ import React from 'react';
 import CodeEditor from '../CodeEditor/CodeEditor';
 import Terminal from '../Terminal/Terminal';
 import './Main.scss';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import CircularProgress from '@mui/material/CircularProgress';
 import axios from '../../axios';
 import { connect } from 'react-redux';
@@ -86,7 +86,7 @@ class Main extends React.Component {
                 
                 { this.state.codeSubmitting ? 
                     <CircularProgress className = "submitCode submitCode--progress" />:
-                    <KeyboardArrowRightIcon className = "submitCode" onClick = {this.submitCode} />
+                    <PlayCircleIcon className = "submitCode" onClick = {this.submitCode} />
                 }
                 
             </div>
