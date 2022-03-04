@@ -21,7 +21,8 @@ class Main extends React.Component {
             codeSubmitting: false,
             code: '\n',
             input: '',
-            output: ''
+            output: '',
+            error: ''
         }
 
         this.submitCode = this.submitCode.bind(this);
@@ -52,7 +53,16 @@ class Main extends React.Component {
             input: this.state.input
         })).data;
 
-        this.setState({codeSubmitting: false, output: response.code_output.join('\n')});
+        let error_msg= "";
+
+        if(response.status_msg === "Time Limit Exceeded") {
+            error_msg = response.status_msg;
+        }
+        else {
+            error_msg = response.full_compile_error;
+        }
+
+        this.setState({codeSubmitting: false, output: response.code_output.join('\n'), error: error_msg});
 
     }
 
@@ -81,7 +91,7 @@ class Main extends React.Component {
         return (
             <div className = "main" ref = {this.main}>
                 <CodeEditor code={this.state.code} changeCode={this.changeCode} />
-                <Terminal output={this.state.output} input = {this.state.input} changeInput = {this.changeInput} isCollapsed = {this.state.collapsed} />
+                <Terminal output={this.state.output} input = {this.state.input} error= {this.state.error} changeInput = {this.changeInput} isCollapsed = {this.state.collapsed} />
                 <KeyboardArrowRightIcon className = {`showCode ${this.state.collapsed && 'showCode--collapsed'}`} onClick = {this.collapseAndShow} />
                 
                 { this.state.codeSubmitting ? 
