@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 .header {
     
     background-color: #1E1E1E;
@@ -20,9 +22,9 @@
         display: flex;
         align-items: center;
         margin-left: 20px;
-
-        .header__title {
         
+        .header__title {
+            
             text-align: center;
             letter-spacing: 2px;
             color: rgba(255, 255, 255, 0.4);
@@ -38,8 +40,13 @@
         
             font-size: 32px;
             font-weight: bold;
-
+            
             cursor: pointer;
+            
+            @include media("<=phone"){
+                font-size: 20px;
+                margin: 0 0 0 -5px;
+            }
         
         }
         
@@ -56,6 +63,8 @@
                     background-size: 50px 100%;
             }
         }
+
+        
 
     }
 
@@ -85,6 +94,22 @@
             &:hover {
                 border-color: white;
             }
+
+            @include media("<=phone"){
+                padding: 3px;
+                font-size: 12px;
+                margin: 0px 6px;
+            }
+        }
+
+        option {
+            font-size: 16px;
+
+            @include media("<=phone"){
+                padding: 5px;
+                font-size: 14px;
+                margin: 5px 8px;
+            }
         }
 
         .githubIcon {
@@ -100,21 +125,35 @@
             font-size: 32px;
             color: white;
             cursor: pointer;
+            padding: 5px;
             margin: 0px 20px;
+            transition: transform 0.5s ease;
+            
+            @include media("<=phone"){
+                font-size: 28px;
+                margin: 0px 3px;
+
+            }
         }
 
         .themeIcon {
+            background-color: rgb(90, 21, 180);
+            border-radius: 50%;
             color: yellow;
             opacity: 0.9;
             transition: opacity 100ms;
-
+            
             &:hover {
                 opacity: 1;
             }
         }
+        // .sunIcon{
+        //     // transform: translateY(50px);
+
+        // }
 
         .moonIcon {
-            color: #65b6ec;
+            color: #ffffff;
             transform: rotate(-110deg);
         }
     }

@@ -64,8 +64,12 @@ class Header extends React.Component {
                     </a>
                     {
                         this.props.theme === 'light' ? 
-                        <MoonIcon className="icon themeIcon moonIcon" onClick={this.changeTheme} /> : 
-                        <LightModeIcon className="icon themeIcon" onClick={this.changeTheme} />
+                            
+                            <MoonIcon className="icon themeIcon  moonIcon" onClick={this.changeTheme} /> 
+                            :
+                            
+                              <LightModeIcon className="icon themeIcon sunIcon" onClick={this.changeTheme} />
+                        
                     }
                 </div>
             </div> 
