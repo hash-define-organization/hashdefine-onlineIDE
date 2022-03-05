@@ -1,14 +1,21 @@
+@import "../../index.scss";
+
 .terminal {
 
     $terminal-width: 35%;
     width: $terminal-width;
     height: 90vh;
     background-color: #1e1e1e;
-
+    
     transition: width 0.25s ease-in-out;
 
     display: flex;
     flex-direction: column;
+    
+    @include media("<=phone"){
+        width: 38%;
+
+    }
 
     .subTerminal {
 
@@ -28,10 +35,16 @@
             font-size: 20px;
             letter-spacing: 1px;
             margin-bottom: 10px;
-
+            
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
+            @include media("<=phone"){
+                font-size: 18px;
+                width: 50%;
+        
+            }
 
         }
 
