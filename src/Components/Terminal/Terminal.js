@@ -1,5 +1,5 @@
 import React from 'react';
-import './Terminal.scss'
+import './Terminal.scss';
 
 class Terminal extends React.Component {
     
@@ -15,7 +15,7 @@ class Terminal extends React.Component {
                 </div>
                 <div className="subTerminal">
                     <div className='fieldName'>Output</div>
-                    <textarea className = "textField" disabled value={this.props.output} />
+                    <textarea className = "textField" disabled value={this.props.output === "" ? this.props.error : this.props.output} />
                 </div>
             </div>
         )
