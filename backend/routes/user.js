@@ -10,7 +10,7 @@ router.post('/registerUser',async (req,res)=>{
         await user.save()
         res.status(201).send(user)
     }catch(e){
-        res.status(400).send('UserName Already Taken!!')
+        res.status(400).send('UserName Already Taken!!').redirect('/registerUser')
     }
 })
 
@@ -21,7 +21,7 @@ router.post('/loginUser',async (req,res)=>{
         const user = await User.findByCredentials(req.body.username,req.body.password)
         res.send(user) 
     }catch(e){
-        res.status(400).send('Login Failed')
+        res.status(400).send('Login Failed').redirect('/loginUser')
     }
 })
 

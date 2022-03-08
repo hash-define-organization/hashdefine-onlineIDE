@@ -1,7 +1,13 @@
 const mongoose=require('mongoose')
-mongoose.connect('mongodb://127.0.0.1:27017/HashIDE', {
+require('dotenv').config()
+const password=process.env.PASSWORD
+const DB='mongodb+srv://dbUser:'+password+'@cluster0.45ipq.mongodb.net/hashIDE?retryWrites=true&w=majority&ssl=true'
+mongoose.connect(DB, {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
+        useUnifiedTopology: true
     })   
- .then(() => console.log("Database connected!"))
- .catch(err => console.log(err));
+ .then(() => 
+     console.log("DATABASE CONNECTED"))
+   .catch(err => console.log(err));
+
+ 
