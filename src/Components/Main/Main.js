@@ -3,10 +3,12 @@ import CodeEditor from '../CodeEditor/CodeEditor';
 import Terminal from '../Terminal/Terminal';
 import './Main.scss';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import CircularProgress from '@mui/material/CircularProgress';
 import axios from '../../axios';
 import { connect } from 'react-redux';
 import themeAction from '../../Actions/theme';
+import { PlayCircleFilled } from '@mui/icons-material';
 
 class Main extends React.Component {
 
@@ -96,7 +98,7 @@ class Main extends React.Component {
                 
                 { this.state.codeSubmitting ? 
                     <CircularProgress className = "submitCode submitCode--progress" />:
-                    <KeyboardArrowRightIcon className = "submitCode" onClick = {this.submitCode} />
+                    <PlayCircleFilledWhiteIcon className = "submitCode" onClick = {this.submitCode} />
                 }
                 
             </div>

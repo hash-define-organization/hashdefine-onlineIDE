@@ -11,7 +11,7 @@
         right: 0;
         margin: 10px 20px;
         cursor: pointer;
-
+        
         transition: color, border-color 100ms ease-in-out;
         transition: transform 0.25s ease-in-out;;
 
@@ -30,7 +30,7 @@
         color: rgba(white, 0.8);
         border: none;
         padding: 5px;
-        font-size: 3em;
+        font-size: 4em;
         position: absolute;
         right: 1%;
         bottom: 4%;
@@ -42,6 +42,7 @@
 
         &:hover {
             color: rgba(white,1);
+            font-size: 4.3em;
         }
     }
 
