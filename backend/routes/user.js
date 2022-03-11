@@ -9,6 +9,7 @@ router.post('/registerUser',async (req,res)=>{
     try{
         await user.save()
         res.status(201).send(user)
+        res.redirect("/loginUser");
     }catch(e){
         res.status(400).send('UserName Already Taken!!')
     }
