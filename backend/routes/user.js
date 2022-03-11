@@ -20,7 +20,8 @@ router.post('/registerUser',async (req,res)=>{
 router.post('/loginUser',async (req,res)=>{
     try{
         const user = await User.findByCredentials(req.body.username,req.body.password)
-        res.send(user) 
+        if(user) await res.send(user) 
+        else res.redirect("/registerUser")
     }catch(e){
         res.status(400).send('Login Failed')
     }
