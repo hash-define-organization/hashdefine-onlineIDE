@@ -1,7 +1,6 @@
 import React from "react";
 import "./Header.scss";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import Button from '@mui/material/Button';
 import GitHubIcon from "@mui/icons-material/GitHub";
 import DownloadIcon from '@mui/icons-material/Download';
 import MoonIcon from "@mui/icons-material/NightsStay";
