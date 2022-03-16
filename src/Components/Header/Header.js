@@ -8,6 +8,9 @@ import themeAction from '../../Actions/theme';
 import fontSizeAction from '../../Actions/fontSize';
 import changeLanguage from '../../Actions/currentLanguage';
 
+/* This is the Header class, it is divided into two sections Header_left and Header_right
+   Header_left is mainly to display our symbol for IDE, whereas Header_right shows us different options,
+   like to change font, change language, also github link for the HASH-IDE repository and finally a button to change theme, dark to light theme. */
 class Header extends React.Component {
 
     constructor(props) {

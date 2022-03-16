@@ -8,6 +8,9 @@ import axios from '../../axios';
 import { connect } from 'react-redux';
 import themeAction from '../../Actions/theme';
 
+/* This Main class that calls CodeEditor and Terminal component, it is here that provides
+   symbol for run button. Main class provides different features for our webiste, for example error handling for our user input in codeEditor class, likewise many other. */
+
 class Main extends React.Component {
 
     constructor(props) {

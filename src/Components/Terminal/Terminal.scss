@@ -17,7 +17,7 @@
 
     }
 
-    .subTerminal {
+    .subTerminalInput {
 
         height: 45vh;
         background-color: #1e1e1e;
@@ -29,7 +29,7 @@
         flex-direction: column;
         justify-content: space-around;
 
-        .fieldName {
+        .fieldNameInput {
         
             // opacity: 1;
             font-size: 20px;
@@ -48,7 +48,46 @@
 
         }
 
-        .textField {
+        .textFieldInput {
+            height: 30vh;
+            background-color: #1e1e1e;
+            color: white;
+            font-size: 16px;
+            resize: none;
+            padding: 10px;
+        }
+    }
+    .subTerminalOutput {
+
+        height: 45vh;
+        background-color: #1e1e1e;
+        color:white;
+        padding: 10px;
+        font-family: "Segoe UI";
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .fieldNameOutput {
+        
+            // opacity: 1;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            @include media("<=phone"){
+                font-size: 18px;
+                width: 50%;
+        
+            }
+
+        }
+
+        .textFieldOutput {
             height: 30vh;
             background-color: #1e1e1e;
             color: white;
@@ -61,9 +100,17 @@
 }
 
 .collapsed {
-    width: 5%;
+    width: 7%;
     
-    .subTerminal {
+    .subTerminalInput {
+        display: none;
+
+        // .fieldName {
+        //     transition: opacity 0.5s ease-in-out;
+        //     opacity: 0;
+        // }
+    }
+    .subTerminalOutput {
         display: none;
 
         // .fieldName {

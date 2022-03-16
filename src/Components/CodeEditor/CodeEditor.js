@@ -3,6 +3,7 @@ import './CodeEditor.scss';
 import Editor from '@monaco-editor/react'
 import { connect } from 'react-redux';
 
+/* This is the Editor class, mainly used for writing code by the user.*/
 class CodeEditor extends React.Component {
 
     // editorDidMount(editor, monaco) {
