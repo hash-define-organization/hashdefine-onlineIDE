@@ -40,12 +40,12 @@ I am writing down the Dependencies for beginners, so that they can look into it 
 
 3. Change the directory to HashIDE.
 	```bash
-	cd HashIDE
+	cd hashdefine-onlineIDE
 	```
 
 4. Add remote to the Original Repository.
 	```
-	git add remote upstream https://github.com/hash-define-organization/hashdefine-onlineIDE.git
+	git remote add upstream https://github.com/hash-define-organization/hashdefine-onlineIDE.git
 	```
 
 5. Install the dependecies.
