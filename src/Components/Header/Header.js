@@ -1,5 +1,7 @@
 import React from 'react';
 import './Header.scss';
+import './Header.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MoonIcon from '@mui/icons-material/NightsStay';
@@ -7,7 +9,7 @@ import { connect } from 'react-redux';
 import themeAction from '../../Actions/theme';
 import fontSizeAction from '../../Actions/fontSize';
 import changeLanguage from '../../Actions/currentLanguage';
-
+import { Link } from "react-router-dom";
 /* This is the Header class, it is divided into two sections Header_left and Header_right
    Header_left is mainly to display our symbol for IDE, whereas Header_right shows us different options,
    like to change font, change language, also github link for the HASH-IDE repository and finally a button to change theme, dark to light theme. */
@@ -24,7 +26,7 @@ class Header extends React.Component {
         const language = event.target.value;
         const id = this.props.languages.find(language => language.value === event.target.value).id
 
-        this.props.changeLanguage({language, id});
+        this.props.changeLanguage({ language, id });
     }
 
     changeTheme() {
@@ -36,15 +38,21 @@ class Header extends React.Component {
     }
 
     render() {
-        return ( 
-            <div className = {`header`}>
+        return (
+            <div className={`header`}>
                 <div className="header__left">
-                    <div className = "header__title">
+                    <div className="header__title">
                         DEFINE IDE
                     </div>
                 </div>
+                <div className='abc'>
+                    <div className='btn1'><Link to="/login"><button type="button" className="btn btn-light butn">LOGIN</button></Link></div>
+                    <div classNmae='btn2'><Link to="/signUp"><button type="button" className="btn btn-light butn">REGISTER</button></Link></div>
+                </div>
+
+
                 <div className="header__right">
-                    <select value={this.props.fontSize} onChange={this.changeFontSize} className = "language__select" name='fontSize__choice'>
+                    <select value={this.props.fontSize} onChange={this.changeFontSize} className="language__select" name='fontSize__choice'>
                         {
                             [12, 14, 16, 18].map(fontSize => {
                                 return (
@@ -53,7 +61,7 @@ class Header extends React.Component {
                             })
                         }
                     </select>
-                    <select value={this.props.selectedLanguage} onChange={this.changeLanguage} className = "language__select" name='language__choice'>
+                    <select value={this.props.selectedLanguage} onChange={this.changeLanguage} className="language__select" name='language__choice'>
                         {
                             this.props.languages.map(language => {
                                 return (
@@ -66,23 +74,23 @@ class Header extends React.Component {
                         <GitHubIcon className="icon githubIcon" />
                     </a>
                     {
-                        this.props.theme === 'light' ? 
-                            
-                            <MoonIcon className="icon themeIcon  moonIcon" onClick={this.changeTheme} /> 
+                        this.props.theme === 'light' ?
+
+                            <MoonIcon className="icon themeIcon  moonIcon" onClick={this.changeTheme} />
                             :
-                            
-                              <LightModeIcon className="icon themeIcon sunIcon" onClick={this.changeTheme} />
-                        
+
+                            <LightModeIcon className="icon themeIcon sunIcon" onClick={this.changeTheme} />
+
                     }
                 </div>
-            </div> 
+            </div>
         );
     }
 }
 
 function mapStateToProps(state, ownProps) {
     // console.log(state)
-	return {
+    return {
         theme: state.theme,
         fontSize: state.fontSize,
         languages: state.languages,
@@ -91,4 +99,4 @@ function mapStateToProps(state, ownProps) {
     }
 }
 
-export default connect(mapStateToProps, {themeAction, fontSizeAction, changeLanguage})(Header);
+export default connect(mapStateToProps, { themeAction, fontSizeAction, changeLanguage })(Header);
