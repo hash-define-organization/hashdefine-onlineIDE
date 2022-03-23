@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from "react";
 import "./Login.css";
+import "../Header/Header.css" 
 import Loader from "../Loader/Loader";
 import CloseIcon from "@mui/icons-material/Close";
 import MailIcon from "@mui/icons-material/Mail";
 import LockIcon from "@mui/icons-material/Lock";
-
+import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,7 +33,7 @@ function Login() {
   return (
     <Fragment>
       <form className="login_form" onSubmit={handleSubmit}>
-        <h1 className="login_heading">Login</h1>
+        {/* <h1 className="login_heading">Login</h1> */}
 
         <div className="input_element">
           <MailIcon />
@@ -55,8 +56,8 @@ function Login() {
           />
         </div>
 
-
         <button type="submit">Login</button>
+        <div className='btn2'><Link to="/signUp"><button type="button" className="btn btn-success butn">SignUp</button></Link></div>
       </form>
 
       <div className="message_container">

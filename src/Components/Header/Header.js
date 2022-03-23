@@ -45,13 +45,7 @@ class Header extends React.Component {
                         DEFINE IDE
                     </div>
                 </div>
-                <div className='abc'>
-                    <div className='btn1'><Link to="/login"><button type="button" className="btn btn-light butn">LOGIN</button></Link></div>
-                    <div classNmae='btn2'><Link to="/signUp"><button type="button" className="btn btn-light butn">REGISTER</button></Link></div>
-                </div>
-
-
-                <div className="header__right">
+                    <div className="header__right">
                     <select value={this.props.fontSize} onChange={this.changeFontSize} className="language__select" name='fontSize__choice'>
                         {
                             [12, 14, 16, 18].map(fontSize => {
@@ -73,6 +67,7 @@ class Header extends React.Component {
                     <a className='github--link' href='https://github.com/hash-define-organization/'>
                         <GitHubIcon className="icon githubIcon" />
                     </a>
+                    <div className='btn1'><Link to="/login"><button type="button" className="btn btn-secondary butn">LOGIN</button></Link></div>
                     {
                         this.props.theme === 'light' ?
 

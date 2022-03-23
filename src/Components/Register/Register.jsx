@@ -37,7 +37,7 @@ function Register() {
   return (
     <Fragment>
       <form className="register_form" onSubmit={handleSubmit}>
-        <h1 className="register_heading">Sign Up</h1>
+        {/* <h1 className="register_heading">Sign Up</h1> */}
 
         <div className="input_element">
           <PersonIcon />
