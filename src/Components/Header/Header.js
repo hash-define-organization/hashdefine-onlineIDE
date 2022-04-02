@@ -12,28 +12,39 @@ import changeLanguage from '../../Actions/currentLanguage';
    Header_left is mainly to display our symbol for IDE, whereas Header_right shows us different options,
    like to change font, change language, also github link for the HASH-IDE repository and finally a button to change theme, dark to light theme. */
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.changeTheme = this.changeTheme.bind(this);
+    this.changeFontSize = this.changeFontSize.bind(this);
+    this.changeLanguage = this.changeLanguage.bind(this);
+  }
 
-    constructor(props) {
-        super(props);
-        this.changeTheme = this.changeTheme.bind(this);
-        this.changeFontSize = this.changeFontSize.bind(this);
-        this.changeLanguage = this.changeLanguage.bind(this);
-    }
+  changeLanguage(event) {
+    const language = event.target.value;
+    const id = this.props.languages.find(
+      (language) => language.value === event.target.value
+    ).id;
 
-    changeLanguage(event) {
-        const language = event.target.value;
-        const id = this.props.languages.find(language => language.value === event.target.value).id
+    this.props.changeLanguage({ language, id });
+  }
 
-        this.props.changeLanguage({language, id});
-    }
+  changeTheme() {
+    this.props.themeAction();
+  }
 
-    changeTheme() {
-        this.props.themeAction()
-    }
+  changeFontSize(event) {
+    this.props.fontSizeAction(event.target.value);
+  }
 
-    changeFontSize(event) {
-        this.props.fontSizeAction(event.target.value);
-    }
+  render() {
+    const downloadCode = () => {
+      const element = document.createElement("a");
+      const file = new Blob([this.props.code], { type: "text/plain" });
+      element.href = URL.createObjectURL(file);
+      element.download = `code.${this.props.selectedLanguage}`;
+      document.body.appendChild(element); // Required for this to work in FireFox
+      element.click();
+    };
 
     render() {
         return ( 
@@ -81,14 +92,19 @@ class Header extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    // console.log(state)
-	return {
-        theme: state.theme,
-        fontSize: state.fontSize,
-        languages: state.languages,
-        selectedLanguage: state.currentLanguage.selectedLanguage,
-        selectedId: state.currentLanguage.selectedId
-    }
+  // console.log(state)
+  return {
+    theme: state.theme,
+    fontSize: state.fontSize,
+    languages: state.languages,
+    selectedLanguage: state.currentLanguage.selectedLanguage,
+    selectedId: state.currentLanguage.selectedId,
+    code: state.code.code,
+  };
 }
 
-export default connect(mapStateToProps, {themeAction, fontSizeAction, changeLanguage})(Header);
+export default connect(mapStateToProps, {
+  themeAction,
+  fontSizeAction,
+  changeLanguage,
+})(Header);

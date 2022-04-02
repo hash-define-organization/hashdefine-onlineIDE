@@ -15,29 +15,25 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props);
-        
         this.collapseAndShow = this.collapseAndShow.bind(this);
         this.main = React.createRef();
         
         this.state = {
             collapsed: false,
             codeSubmitting: false,
-            code: '\n',
             input: '',
             output: '',
             error: ''
         }
 
         this.submitCode = this.submitCode.bind(this);
-        this.changeCode = this.changeCode.bind(this);
         this.changeInput = this.changeInput.bind(this);
         this.getCode = this.getCode.bind(this);
     }
 
-    changeCode(code) {
-        this.setState({
-            code: code
-        })
+    changeCode(e) {
+        console.log(e,this.props.code)
+        this.props.changeCode(e);
     }
 
     changeInput(event) {
@@ -52,7 +48,7 @@ class Main extends React.Component {
 
         const response = (await axios.post('/api/v1/ide/getcode', {
             language: this.props.selectedLanguage,
-            code: this.state.code,
+            code: this.props.code,
             input: this.state.input
         })).data;
 
@@ -93,7 +89,7 @@ class Main extends React.Component {
     render() {
         return (
             <div className = "main" ref = {this.main}>
-                <CodeEditor code={this.state.code} changeCode={this.changeCode} />
+                <CodeEditor />
                 <Terminal output={this.state.output} input = {this.state.input} error= {this.state.error} changeInput = {this.changeInput} isCollapsed = {this.state.collapsed} />
                 <KeyboardArrowRightIcon className = {`showCode ${this.state.collapsed && 'showCode--collapsed'}`} onClick = {this.collapseAndShow} />
                 
@@ -111,8 +107,9 @@ function mapStateToProps(state, ownProps) {
 	return {
         theme: state.theme,
         selectedLanguage: state.currentLanguage.selectedLanguage,
-        selectedId: state.currentLanguage.selectedId
+        selectedId: state.currentLanguage.selectedId,
+        code: state.code.code
     }
 }
 
-export default connect(mapStateToProps, {themeAction})(Main);
+export default connect(mapStateToProps, {themeAction,changeCode})(Main);
