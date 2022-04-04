@@ -1,6 +1,8 @@
 const mongoose=require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
+const jwt=require('jsonwebtoken')
+require('dotenv').config()
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -23,6 +25,12 @@ const userSchema = new mongoose.Schema({
     collegeName:{
         type:String
     },
+    tokens:[{
+        token:{
+                type:String,
+                required:true
+        }
+    }],
     LanguagesKnown:[{
         language:{
                 type:String
@@ -37,6 +45,8 @@ const userSchema = new mongoose.Schema({
         }
         next()
     })
+
+
     userSchema.statics.findByCredentials = async (username, password) =>{
         const user = await User.findOne({username: username}) 
         if(!user){
@@ -48,6 +58,16 @@ const userSchema = new mongoose.Schema({
         }
         return user
     } 
+
+
+    // Generating the JWT-Authentication-Token
+    userSchema.methods.generateAuthToken=async function(){
+        const user=this
+        const token=jwt.sign({_id:user._id.toString()},"hello")
+        user.tokens=user.tokens.concat({token})  
+        await user.save()
+        return token
+    }
 
 const User=mongoose.model('User', userSchema)
 module.exports=User
