@@ -46,7 +46,7 @@ class Header extends React.Component {
       element.click();
     };
 
-    render() {
+    render(){
         return ( 
             <div className = {`header`}>
                 <div className="header__left">
