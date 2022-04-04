@@ -112,4 +112,4 @@ function mapStateToProps(state, ownProps) {
     }
 }
 
-export default connect(mapStateToProps, {themeAction,changeCode})(Main);
+export default connect(mapStateToProps, {themeAction})(Main);
