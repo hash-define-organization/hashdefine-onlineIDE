@@ -63,9 +63,9 @@ class Header extends React.Component {
                             })
                         }
                     </select>
-			  <span className='github--link'>
+			  <a className='github--link' href = "/sketch">
                         <BrushIcon className="icon githubIcon" />
-                    </span>
+                    </a>
                     <a className='github--link' href='https://github.com/hash-define-organization/'>
                         <GitHubIcon className="icon githubIcon" />
                     </a>
