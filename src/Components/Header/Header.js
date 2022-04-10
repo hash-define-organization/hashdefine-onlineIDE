@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.scss';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import BrushIcon from '@mui/icons-material/Brush';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MoonIcon from '@mui/icons-material/NightsStay';
 import { connect } from 'react-redux';
@@ -62,6 +63,9 @@ class Header extends React.Component {
                             })
                         }
                     </select>
+			  <a className='github--link' href = "/sketch">
+                        <BrushIcon className="icon githubIcon" />
+                    </a>
                     <a className='github--link' href='https://github.com/hash-define-organization/'>
                         <GitHubIcon className="icon githubIcon" />
                     </a>

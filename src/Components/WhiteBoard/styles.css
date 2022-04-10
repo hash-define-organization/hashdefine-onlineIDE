@@ -1,0 +1,48 @@
+.color-picker-container {
+  position: relative;
+}
+.color-picker-palette {
+  position: absolute;
+  z-index: 100;
+}
+
+.color-picker-cover {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.color-picker-color-background {
+  position: fixed;
+  height: 35px;
+  width: 35px;
+  background-color: #999999;
+  float: left;
+}
+.icon-bar button {
+  width: auto;
+  display: block;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 30px;
+}
+
+.icon-vbar {
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: auto;
+}
+
+.icon-vbar div {
+  display: inline-block;
+  text-align: center;
+  padding: 12px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 8px;
+}
