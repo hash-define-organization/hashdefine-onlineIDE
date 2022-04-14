@@ -4,6 +4,9 @@ import Editor from '@monaco-editor/react'
 import { connect } from 'react-redux';
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 
+
+
+
 /* This is the Editor class, mainly used for writing code by the user.*/
 class CodeEditor extends React.Component {
 
@@ -18,7 +21,6 @@ class CodeEditor extends React.Component {
     render() {
         
       const text = this.props.code;
-        console.log(text)
 
         
         const options = {
@@ -46,8 +48,9 @@ class CodeEditor extends React.Component {
         }
 
         return (
-            <div className='editor'>
-                <DownloadForOfflineIcon className='download_button' onClick={ download_code}/>
+            <div className='editor'>                    
+                
+                <DownloadForOfflineIcon className='download_button' onClick={download_code} style={{ fill: 'rgba(255,255,255,0.8)' }} />        
                 <Editor
                     defaultLanguage={this.props.selectedLanguage}
                     defaultValue={text}
