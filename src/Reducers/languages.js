@@ -1,5 +1,6 @@
 import languagesData from '../data/languages.json';
-
-export default function (languages = languagesData) {
+ function Data (languages = languagesData) {
     return languages;
 }
+
+export default Data;

@@ -48,22 +48,20 @@ class CodeEditor extends React.Component {
         }
 
         return (
-            <div className='editor'>                    
+            <div className='editor'>
                 
-                <DownloadForOfflineIcon className='download_button' onClick={download_code} style={{ fill: 'rgba(255,255,255,0.8)' }} />        
+                <DownloadForOfflineIcon className='download_button' onClick={download_code} style={{ fill: 'rgba(255,255,255,0.8)' }} />
                 <Editor
                     defaultLanguage={this.props.selectedLanguage}
                     defaultValue={text}
                     value={text}
                     language={this.props.selectedLanguage}
-                    theme={`${this.props.theme !== "light" ? "vs-dark": "vs"}`}
-                    options={{...options}}
+                    theme={`${this.props.theme !== "light" ? "vs-dark" : "vs"}`}
+                    options={{ ...options }}
                     onChange={this.props.changeCode}
-                    onValidate={this.handleEditorValidation}
-                    // onMount={this.editorDidMount}
-                />
-            </div>
-        )
+                    onValidate={this.handleEditorValidation} />
+            </ div>
+        );
     }
 }
 

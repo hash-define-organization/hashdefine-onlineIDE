@@ -1,4 +1,4 @@
-export default function (state = 'dark', action) {
+ function TOGGLE_THEME(state = 'dark', action) {
 
     if(action && action.type === 'TOGGLE_THEME') {
         return state === 'dark' ? 'light' : 'dark';
@@ -6,3 +6,5 @@ export default function (state = 'dark', action) {
 
     return state;
 }
+
+export default TOGGLE_THEME;
