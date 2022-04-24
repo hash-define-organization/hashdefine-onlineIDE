@@ -11,7 +11,7 @@ import themeAction from '../../Actions/theme';
 /* This Main class that calls CodeEditor and Terminal component, it is here that provides
    symbol for run button. Main class provides different features for our webiste, for example error handling for our user input in codeEditor class, likewise many other. */
 
-class Main extends React.Component {
+class Main extends React.Component  {
 
     constructor(props) {
         super(props);
@@ -101,7 +101,7 @@ class Main extends React.Component {
                     <CircularProgress className = "submitCode submitCode--progress" />:
                     <KeyboardArrowRightIcon className = "submitCode" onClick = {this.submitCode} />
                 }
-                
+
             </div>
         );
   }

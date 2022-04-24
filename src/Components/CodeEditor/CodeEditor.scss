@@ -13,3 +13,14 @@
 
     }
 }
+
+.download_button {
+    height: 40px !important; 
+    width: 40px !important;
+    background-color: #1E1E1E;
+    margin-left: 95%;
+}
+
+.download_button :hover {
+    fill: aliceblue !important;
+}

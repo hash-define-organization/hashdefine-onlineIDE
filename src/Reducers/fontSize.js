@@ -1,4 +1,4 @@
-export default function(state = 14, action) {
+ function CHANGE_FONT_SIZE (state = 14, action) {
     
     if (action.type === 'CHANGE_FONT_SIZE') {
         return action.payload;
@@ -7,3 +7,5 @@ export default function(state = 14, action) {
     return state;
 
 }
+
+export default CHANGE_FONT_SIZE;

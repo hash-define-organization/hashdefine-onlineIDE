@@ -3,7 +3,7 @@ const defaultLanguage = {
     selectedId: 69,
 }
 
-export default function (state = defaultLanguage, action) {
+ function CHANGE_LANGUAGE (state = defaultLanguage, action) {
 
     switch (action.type) {
         case 'CHANGE_LANGUAGE':
@@ -16,3 +16,4 @@ export default function (state = defaultLanguage, action) {
             return state;
     }
 }
+export default CHANGE_LANGUAGE;

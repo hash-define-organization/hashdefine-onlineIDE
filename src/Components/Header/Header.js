@@ -9,11 +9,13 @@ import themeAction from '../../Actions/theme';
 import fontSizeAction from '../../Actions/fontSize';
 import changeLanguage from '../../Actions/currentLanguage';
 
-/* This is the Header class, it is divided into two sections Header_left and Header_right
-   Header_left is mainly to display our symbol for IDE, whereas Header_right shows us different options,
-   like to change font, change language, also github link for the HASH-IDE repository and finally a button to change theme, dark to light theme. */
-class Header extends React.Component {
 
+
+/* This is the Header class, it is divided into two sections Header_left and Header_right
+Header_left is mainly to display our symbol for IDE, whereas Header_right shows us different options,
+like to change font, change language, also github link for the HASH-IDE repository and finally a button to change theme, dark to light theme. */
+class Header extends React.Component {
+    
     constructor(props) {
         super(props);
         this.changeTheme = this.changeTheme.bind(this);
@@ -31,12 +33,16 @@ class Header extends React.Component {
     changeTheme() {
         this.props.themeAction()
     }
-
+    
     changeFontSize(event) {
         this.props.fontSizeAction(event.target.value);
     }
-
+    
+    
+    
     render() {
+
+        
         return ( 
             <div className = {`header`}>
                 <div className="header__left">
@@ -69,15 +75,20 @@ class Header extends React.Component {
                     <a className='github--link' href='https://github.com/hash-define-organization/'>
                         <GitHubIcon className="icon githubIcon" />
                     </a>
+                    
+    
+                    
                     {
                         this.props.theme === 'light' ? 
                             
                             <MoonIcon className="icon themeIcon  moonIcon" onClick={this.changeTheme} /> 
                             :
                             
-                              <LightModeIcon className="icon themeIcon sunIcon" onClick={this.changeTheme} />
+                            <LightModeIcon className="icon themeIcon sunIcon" onClick={this.changeTheme} />
                         
                     }
+                
+
                 </div>
             </div> 
         );
