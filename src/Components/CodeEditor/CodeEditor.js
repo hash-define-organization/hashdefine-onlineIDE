@@ -3,6 +3,7 @@ import './CodeEditor.scss';
 import Editor from '@monaco-editor/react'
 import { connect } from 'react-redux';
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 
 
@@ -17,24 +18,25 @@ class CodeEditor extends React.Component {
     handleEditorValidation(markers) {
         // console.log(markers);
     }
-  
-    render() {
-        
-      const text = this.props.code;
 
-        
+    render() {
+
+        const text = this.props.code;
+
+
         const options = {
             selectOnLineNumbers: true,
             fontSize: `${this.props.fontSize}px`,
             automaticLayout: true,
         };
 
-        const download_code = (texe, name = " Mycode.txt ") => {
-            
-            const blob = new Blob([text], { type: "text/plain" })
-            
-            const href = URL.createObjectURL(blob);
+        const download_code = async (texe, name = " Mycode.txt ") => {
+            console.log(texe);
 
+            const blob = new Blob([text], { type: "text/plain" })
+
+            const href = URL.createObjectURL(blob);
+            // console.log(await blob.text());
             const a = Object.assign(document.createElement("a"), {
                 href,
                 style: "display:none",
@@ -46,11 +48,15 @@ class CodeEditor extends React.Component {
             URL.revokeObjectURL(href);
             a.remove();
         }
-
+        const copy_code = async () => {
+            navigator.clipboard.writeText(text);
+        }
         return (
             <div className='editor'>
-                
-                <DownloadForOfflineIcon className='download_button' onClick={download_code} style={{ fill: 'rgba(255,255,255,0.8)' }} />
+                <div className='buttons_container'>
+                    <ContentCopyIcon className="copy-btn" onClick={copy_code} style={{ fill: 'rgba(255,255,255,0.8)' }} />
+                    <DownloadForOfflineIcon className="download-btn" onClick={download_code} style={{ fill: 'rgba(255,255,255,0.8)' }} />
+                </div>
                 <Editor
                     defaultLanguage={this.props.selectedLanguage}
                     defaultValue={text}
@@ -66,7 +72,7 @@ class CodeEditor extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-	return {
+    return {
         theme: state.theme,
         fontSize: state.fontSize,
         selectedLanguage: state.currentLanguage.selectedLanguage,

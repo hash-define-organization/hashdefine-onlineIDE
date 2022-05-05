@@ -7,20 +7,34 @@
     background-color: #1E1E1E;
     color: white;
     padding: 10px;
-    
-    @include media("<=phone"){
+
+    @include media("<=phone") {
         width: 55%;
 
     }
 }
 
-.download_button {
-    height: 40px !important; 
-    width: 40px !important;
-    background-color: #1E1E1E;
-    margin-left: 95%;
+.buttons_container {
+    display: flex;
+    justify-content: end;
 }
 
-.download_button :hover {
+.download-btn {
+    height: 40px !important;
+    width: 40px !important;
+    background-color: #1E1E1E;
+}
+
+.download-btn :hover {
+    fill: aliceblue !important;
+}
+
+.copy-btn {
+    height: 40px !important;
+    width: 40px !important;
+    background-color: #1E1E1E;
+}
+
+.copy-btn :hover {
     fill: aliceblue !important;
 }
