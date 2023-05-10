@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound';
 /* This is App class that calls Header and Main files, whereas CodeEditor and
    Terminal files are called in Main folder, Main folder is present in Components 
    folder */
+   //ok changed
 class App extends React.Component {
   render() {
     return (
