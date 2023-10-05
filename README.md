@@ -73,13 +73,13 @@ Give a ⭐ if you like this web-app.
 # FAQs
 
 ## 1. I am a beginner with open source or with react can I contribute in this repository ?
-Anybody can contribute to this project. Just take an issue, give your ideas, work on the issue and I am always here to guide you throughout the process ❤ .
+We encourage everyone to contribute to this project. Feel free to pick an issue, share your ideas, and collaborate on it. We're here to guide you every step of the way ❤️
 
 ## 2. What are the steps to make my first contribution ?
 Kindly refer to the [contributing.md](/CONTRIBUTING.md) file. All the contributing guidelines are written over there.
 
 ## 3. Is there any need to assign myself to the issue before starting to work on the issue ?
-It is better to wait until you are assigned to the issue. Although if you are make sure that no-one is working on the issue then you can start working on the issue.
+We encourage everyone to contribute to this project. Feel free to pick an issue, share your ideas, and collaborate on it. We're here to guide you every step of the way ❤️.
 
 ## Contributors
 <a href="https://github.com/hash-define-organization/hashdefine-onlineIDE/graphs/contributors">
